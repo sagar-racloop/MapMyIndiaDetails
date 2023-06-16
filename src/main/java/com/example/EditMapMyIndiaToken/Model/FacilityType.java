@@ -6,36 +6,28 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
-import java.util.Date;
-
-
-
-@Entity
-@Table(name="map_my_india_token")
-@Builder
+import java.sql.Date;
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class MapMyIndiaToken implements Serializable {
-
+@AllArgsConstructor
+@Entity
+@Builder
+@Table(name = "m_facility_type")
+public class FacilityType {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private String sno;
-    private String accessToken;
+    @Column( name = "ID")
+    private String id;
+    private String description;
+    private String redirectForm;
     private String activeYn;
     private Date crtDt;
     private String crtUsr;
     private Date lstUpdDt;
     private String lstUpdUsr;
-
-
-
-
-
-
 }
